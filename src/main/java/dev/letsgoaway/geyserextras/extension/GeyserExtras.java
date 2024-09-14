@@ -20,10 +20,10 @@ public class GeyserExtras implements Extension {
     public void onPreInitialize(GeyserPreInitializeEvent event) {
         initLog = new InitializeLogger((s) -> logger().warning(s), (s) -> logger().info(s));
         initLog.start();
-        initLog.warn("GeyserExtras is currently not supported as a Geyser Extension!");
-        initLog.warn("If you are running Geyser on your server/proxy, place this plugin");
-        initLog.warn("in your softwares's plugins folder and not the Geyser Extensions folder!");
-        initLog.warn("Disabling...");
+        initLog.warn("GeyserExtras目前不支持作为Geyser Extension！");
+        initLog.warn("如果您正在服务器/代理上运行Geyser，请将此插件");
+        initLog.warn("放在您的软件的插件文件夹，而不是间歇泉扩展文件夹！");
+        initLog.warn("正在禁用...");
         initLog.endNoDone();
         this.setEnabled(false);
         PluginVersion.checkForUpdatesAndPrintToLog((s) -> logger().warning(s));

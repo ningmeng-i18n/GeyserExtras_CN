@@ -50,7 +50,7 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
         );
         subscribers.add(
                 api.eventBus().subscribe(this, org.geysermc.geyser.api.event.bedrock.SessionDisconnectEvent.class, (ev) -> {
-                    if ((ev.disconnectReason().equals("disconnectionScreen.resourcePack")) || (ev.disconnectReason().equals("Bedrock client disconnected") && ev.connection().javaUuid() == null)) {
+                    if ((ev.disconnectReason().equals("disconnectionScreen.resourcePack")) || (ev.disconnectReason().equals("已断开基岩客户端连接") && ev.connection().javaUuid() == null)) {
                         OptionalPacks.loadingResourcePacks.remove(ev.connection().xuid());
                     }
                 })
@@ -59,16 +59,16 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
 
     @Override
     public void onConfigLoad() {
-        GeyserExtras.initLog.info("Loading GeyserOptionalPack...");
+        GeyserExtras.initLog.info("正在加载GeyserOptionalPack...");
         GeyserOptionalPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack")));
-        GeyserExtras.initLog.info("GeyserOptionalPack v" + GeyserOptionalPack.manifest().header().version().toString() + " loaded succesfully!");
+        GeyserExtras.initLog.info("GeyserOptionalPack v" + GeyserOptionalPack.manifest().header().version().toString() + " 加载成功！");
         GeyserExtras.initLog.info("Loading GeyserExtrasPack...");
         GeyserExtrasPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack")));
-        GeyserExtras.initLog.info("GeyserExtrasPack v" + GeyserExtrasPack.manifest().header().version().toString() + " loaded succesfully!");
+        GeyserExtras.initLog.info("GeyserExtrasPack v" + GeyserExtrasPack.manifest().header().version().toString() + " 加载成功！");
         if (Config.packsArray.isEmpty()) {
             return;
         }
-        GeyserExtras.initLog.logTask("Loading optional packs...", this::loadResources, "Optional packs loaded!");
+        GeyserExtras.initLog.logTask("正在加载可选包...", this::loadResources, "可选包已加载！");
     }
 
     private void loadResources() {
@@ -84,7 +84,7 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
             ResourcePack resourcePack = ResourcePack.create(PackCodec.path(rp.toPath()));
             resourcePackHashMap.put(resourcePack.manifest().header().uuid(), resourcePack);
             resourcePackPathMap.put(resourcePack.manifest().header().uuid(), rp.toPath());
-            GeyserExtras.initLog.info("Pack '" + resourcePack.manifest().header().name() + "' loaded succesfully!");
+            GeyserExtras.initLog.info("包 '" + resourcePack.manifest().header().name() + "' 加载成功！");
         }
         /* and reenable it here */
         geyserSpigot.getLogger().setFilter(oldFilter);

@@ -9,7 +9,7 @@ public class GeyserEventForwarder implements EventRegistrar {
     public static final org.geysermc.geyser.api.GeyserApi api = org.geysermc.geyser.api.GeyserApi.api();
 
     public GeyserEventForwarder() {
-        GeyserExtras.initLog.logTask("Registering events...", this::tryRegisterEventBus, "Events registered!");
+        GeyserExtras.initLog.logTask("正在注册事件...", this::tryRegisterEventBus, "已注册事件！");
     }
 
     public static boolean enableNetherFog = true;

@@ -15,11 +15,11 @@ public class TabListCommand implements CommandExecutor {
                 new TabList(GeyserExtras.bplayers.get(player.getUniqueId()));
             }
             else {
-                player.sendMessage("Only Bedrock Players can execute that command!");
+                player.sendMessage("只有基岩玩家才能执行这个命令！");
             }
         }
         else {
-            sender.sendMessage("Only Bedrock Players can execute that command!");
+            sender.sendMessage("只有基岩玩家才能执行这个命令！");
         }
         return true;
     }

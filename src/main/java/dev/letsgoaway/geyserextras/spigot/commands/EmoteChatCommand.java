@@ -17,27 +17,27 @@ public class EmoteChatCommand implements CommandExecutor {
             if (!GeyserExtras.bedrockAPI.isBedrockPlayer(player.getUniqueId())) {
                 setEnabled(player, !getEnabled(player));
                 if (getEnabled(player)){
-                    player.sendRawMessage("Emote chat is now unmuted.");
+                    player.sendRawMessage("表情聊天已开启");
                 }
                 else {
-                    player.sendRawMessage("Emote chat is now muted.");
+                    player.sendRawMessage("表情聊天已开启");
                 }
             }
             else {
-                player.sendRawMessage("You can mute Emote Chat in the Chat menu.");
+                player.sendRawMessage("您可以在“聊天”菜单中将表情聊天关闭");
             }
         }
         return true;
     }
 
     public static boolean getEnabled(Player player) {
-        if (hasData("emotechat", player)) {
-          return getData("emotechat", PersistentDataType.BOOLEAN, player);
+        if (hasData("表情聊天", player)) {
+          return getData("表情聊天", PersistentDataType.BOOLEAN, player);
         }
         return Config.muteEmoteChat;
     }
     public static void setEnabled(Player player, boolean b) {
-        setData("emotechat", PersistentDataType.BOOLEAN, b, player);
+        setData("表情聊天", PersistentDataType.BOOLEAN, b, player);
     }
     private static PersistentDataContainer playerSaveData(Player player) {
         return player.getPersistentDataContainer();

@@ -8,7 +8,7 @@ import org.geysermc.cumulus.util.FormImage;
 
 public class QuickMenu extends BedrockContextMenu {
     private static String getContent(BedrockPlayer bedrockPlayer) {
-        return "Binding | Action\n\n" +
+        return "绑定|操作\n\n" +
                 EmoteUtils.getEmoteName(bedrockPlayer.quickMenuList.get(0))
                 + "\n\n\uF840 | " + bedrockPlayer.quickMenuActions.get(0) + "\n\n" +
                 EmoteUtils.getEmoteName(bedrockPlayer.quickMenuList.get(1))
@@ -21,11 +21,11 @@ public class QuickMenu extends BedrockContextMenu {
     }
 
     public QuickMenu(BedrockPlayer bplayer) {
-        super("Quick-Menu", getContent(bplayer));
-        add(new Button("Bindings", FormImage.Type.PATH, "textures/ui/emote_wheel_updated_base.png", () -> {
+        super("快捷菜单", getContent(bplayer));
+        add(new Button("绑定", FormImage.Type.PATH, "textures/ui/emote_wheel_updated_base.png", () -> {
             new QuickMenuBindings(bplayer).show(bplayer);
         }));
-        add(new Button("Actions", FormImage.Type.PATH, "textures/ui/settings_glyph_color_2x.png", () -> {
+        add(new Button("操作", FormImage.Type.PATH, "textures/ui/settings_glyph_color_2x.png", () -> {
             new QuickMenuActions(bplayer).show(bplayer);
         }));
     }

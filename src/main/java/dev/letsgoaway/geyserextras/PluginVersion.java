@@ -20,7 +20,7 @@ public class PluginVersion {
 
     public static boolean checkForUpdate() {
         try {
-            URL url = new URL("https://api.github.com/repos/GeyserExtras/GeyserExtras/tags");
+            URL url = new URL("https://api.github.com/repos/MemgZe2l/GeyserExtras/tags");
             URLConnection request = url.openConnection();
             request.setConnectTimeout(5000);
             request.connect();
@@ -38,11 +38,11 @@ public class PluginVersion {
     public static void checkForUpdatesAndPrintToLog(Consumer<String> logger) {
         new Thread(()->{
             if (checkForUpdate()){
-                logger.accept("There is a new update to GeyserExtras!");
-                logger.accept("You are on version " + GE_VERSION +" but the latest version is " + latestVersion + ".");
+                logger.accept("该插件中文版有更新，请及时更新");
+                logger.accept("你的版本" + GE_VERSION +" 最新版 " + latestVersion + ".");
                 logger.accept("Modrinth: https://modrinth.com/plugin/geyserextras/version/latest");
                 logger.accept("Hangar: https://hangar.papermc.io/GeyserExtras/GeyserExtras/versions/"+latestVersion);
-                logger.accept("Github: https://github.com/GeyserExtras/GeyserExtras/releases/latest");
+                logger.accept("Github: https://github.com/MengZe2l/GeyserExtras/releases/latest");
             }
         }).start();
     }

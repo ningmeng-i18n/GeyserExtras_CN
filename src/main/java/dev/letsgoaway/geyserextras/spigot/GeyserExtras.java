@@ -46,7 +46,7 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
             PluginVersion.checkForUpdatesAndPrintToLog((s) -> logger.warning(s));
         });
         initLog.start();
-        initLog.logTask("Loading config...", Config::loadConfig, "Config loaded!");
+        initLog.logTask("加载配置中...", Config::loadConfig, "配置加载成功!");
         bedrockAPI = new BedrockAPI();
         if (bedrockAPI.foundGeyserClasses) {
             StringBuilder types = new StringBuilder();
@@ -55,7 +55,7 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
             }
             initLog.info("API Types: " + types.substring(0, types.length() - 2));
         } else {
-            initLog.warn("GeyserExtras could not initialize! This means that Floodgate or Geyser was not in your plugins folder.");
+            initLog.warn("GeyserExtras无法初始化！这意味着Floodgate或Geyser不在您的插件文件夹中");
             initLog.endNoDone();
             this.setEnabled(false);
             return;
@@ -69,16 +69,16 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
             plugin.saveResource("GeyserExtrasPack.mcpack", false);
         }
         bedrockAPI.onLoadConfig();
-        initLog.logTask("Registering events...",
+        initLog.logTask("注册事件中...",
                 () -> getServer().getPluginManager().registerEvents(new EventListener(), this),
-                "Events registered!"
+                "事件注册成功!"
         );
         if (Config.proxyMode) {
-            initLog.logTask("Registering proxy channels...",
+            initLog.logTask("正在注册代理通道...",
                     () -> {
                         getServer().getMessenger().registerIncomingPluginChannel(this, "geyserextras:emote", this);
                         getServer().getMessenger().registerOutgoingPluginChannel(this, "geyserextras:fog");
-                    }, "Proxy channels registered!"
+                    }, "代理频道已注册！"
             );
         }
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, this::update, 0L, 0L);
@@ -87,12 +87,12 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
 
     public void loadGeyserOptionalPack() {
         if (!getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack").toFile().exists()) {
-            initLog.info("Downloading GeyserOptionalPack...");
+            initLog.info("正在下载GeyserOptionalPack...");
             InputStream in = null;
             try {
                 in = new URL("https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/latest/builds/latest/downloads/geyseroptionalpack").openStream();
                 Files.copy(in, getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack"), StandardCopyOption.REPLACE_EXISTING);
-                initLog.info("GeyserOptionalPack downloaded!");
+                initLog.info("GeyserOptionalPack 下载成功");
             } catch (IOException ignored) {
             }
         }

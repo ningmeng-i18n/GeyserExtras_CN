@@ -18,7 +18,7 @@ public class OptionalPacks extends BedrockContextMenu {
     public static Map<String, String[]> loadingResourcePacks = new HashMap<>();
 
     public OptionalPacks(BedrockPlayer bplayer) {
-        super("Optional Resource Packs");
+        super("切换材质包");
         BedrockPluginAPI geyserApi = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER);
         String xuid = GeyserExtras.bedrockAPI.getPlayerXUID(bplayer);
         this.onClose = () -> {
@@ -34,7 +34,7 @@ public class OptionalPacks extends BedrockContextMenu {
             }
         };
 
-        add(new Button("§b§l§nSelected", () -> {
+        add(new Button("§b§l§n选择", () -> {
             new OptionalPacks(bplayer).show(bplayer);
         }));
         for (String id : bplayer.optionalPacks) {
@@ -43,7 +43,7 @@ public class OptionalPacks extends BedrockContextMenu {
                 new OptionalPackManager(bplayer, id, packName).show(bplayer);
             }));
         }
-        add(new Button("§b§l§nAvailable", () -> {
+        add(new Button("§b§l§n可用", () -> {
             new OptionalPacks(bplayer).show(bplayer);
         }));
         for (File rp : Config.packsArray) {

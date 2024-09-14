@@ -8,18 +8,18 @@ import dev.letsgoaway.geyserextras.spigot.form.elements.Toggle;
 
 public class SettingsMenu extends BedrockForm {
     SettingsMenu(BedrockPlayer bplayer) {
-        super("Settings");
+        super("个性设置");
         if (Config.customCoolDownEnabled) {
-            add(new Dropdown("Attack Indicator", BedrockPlayer.cooldownTypes, bplayer.cooldownType,
+            add(new Dropdown("攻击指示器", BedrockPlayer.cooldownTypes, bplayer.cooldownType,
                     bplayer::setCooldownType)
             );
         }
         if (bplayer.player.hasPermission("geyser.command.offhand")) {
-            add(new Toggle("Sneak-Drop to Swap Offhand", bplayer.enableSneakDropOffhand, (b) -> {
+            add(new Toggle("蹲下丢弃物品切换副手", bplayer.enableSneakDropOffhand, (b) -> {
                 bplayer.enableSneakDropOffhand = b;
                 bplayer.setEnableSneakDropOffhand(b);
             }));
         }
-        add(new Toggle("Arrow Delay Fix", bplayer.enableArrowDelayFix, bplayer::setEnableArrowDelayFix));
+        add(new Toggle("箭头延迟修复", bplayer.enableArrowDelayFix, bplayer::setEnableArrowDelayFix));
     }
 }

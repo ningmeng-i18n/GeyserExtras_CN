@@ -38,12 +38,12 @@ public class GeyserExtras extends Plugin {
         initLog = new InitializeLogger((s) -> logger.warning(s), (s) -> logger.info(s));
         initLog.start();
         PluginVersion.checkForUpdatesAndPrintToLog((s) -> logger.warning(s));
-        initLog.logTask("Registering channels...", () -> {
+        initLog.logTask("正在注册频道...", () -> {
             proxyServer.registerChannel(emoteChannel);
             proxyServer.registerChannel(fogChannel);
-        }, "Channels registered!");
+        }, "频道已注册！");
         this.forwarder = new GeyserEventForwarder();
-        initLog.warn("Make sure that 'proxy-mode: true' on your backend servers GeyserExtras config!");
+        initLog.warn("确保你GeyserExtras配置文件中的'proxy-mode'为true");
         initLog.end();
     }
     @Override

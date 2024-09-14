@@ -18,9 +18,10 @@ public class InitializeLogger {
 
     public void start() {
         start = Instant.now();
-        info("--------------GeyserExtras--------------");
-        info("Version: " + PluginVersion.GE_VERSION);
-        info("Server Type: " + ServerType.get());
+        info("--------------GeyserExtras 中文版--------------");
+        info("版本: " + PluginVersion.GE_VERSION);
+        info("服务器类型: " + ServerType.get());
+        info("汉化自@梦泽 @柠枺 感谢您的支持！");
     }
 
     public void end() {

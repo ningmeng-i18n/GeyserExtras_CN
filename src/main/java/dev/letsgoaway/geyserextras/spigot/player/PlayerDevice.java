@@ -5,7 +5,7 @@ import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
 import org.bukkit.entity.Player;
 
 public enum PlayerDevice {
-    UNKNOWN("Unknown"),
+    UNKNOWN("逆天未知名设备"),
     ANDROID("Android"),
     IOS("iOS"),
     OSX("macOS"),

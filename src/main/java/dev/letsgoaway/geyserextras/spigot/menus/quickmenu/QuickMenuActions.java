@@ -9,7 +9,7 @@ import java.util.List;
 
 public class QuickMenuActions extends BedrockForm {
     QuickMenuActions(BedrockPlayer bplayer) {
-        super("Quick-Menu Actions");
+        super("快捷菜单 操作");
         this.onClose = () -> {
             new QuickMenu(bplayer).show(bplayer);
         };
@@ -17,28 +17,28 @@ public class QuickMenuActions extends BedrockForm {
             new QuickMenu(bplayer).show(bplayer);
         };
         List<String> actions = Config.quickMenuCommands.keySet().stream().toList();
-        add(new Dropdown("Emote #1 Action", actions, getAction(0, bplayer),
+        add(new Dropdown("表情 #1 的操作", actions, getAction(0, bplayer),
                         (str) -> {
                             bplayer.quickMenuActions.set(0, str);
                             bplayer.save();
                         }
                 )
         );
-        add(new Dropdown("Emote #2 Action", actions, getAction(1, bplayer),
+        add(new Dropdown("表情 #2 的操作", actions, getAction(1, bplayer),
                         (str) -> {
                             bplayer.quickMenuActions.set(1, str);
                             bplayer.save();
                         }
                 )
         );
-        add(new Dropdown("Emote #3 Action", actions, getAction(2, bplayer),
+        add(new Dropdown("表情 #3 的操作", actions, getAction(2, bplayer),
                         (str) -> {
                             bplayer.quickMenuActions.set(2, str);
                             bplayer.save();
                         }
                 )
         );
-        add(new Dropdown("Emote #4 Action", actions, getAction(3, bplayer),
+        add(new Dropdown("表情 #4 的操作", actions, getAction(3, bplayer),
                         (str) -> {
                             bplayer.quickMenuActions.set(3, str);
                             bplayer.save();
@@ -52,7 +52,7 @@ public class QuickMenuActions extends BedrockForm {
         if (Config.quickMenuCommands.containsKey(name)) {
             return name;
         } else {
-            return "None";
+            return "没有";
         }
     }
 }

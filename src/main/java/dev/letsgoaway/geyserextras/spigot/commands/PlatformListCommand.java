@@ -15,15 +15,15 @@ public class PlatformListCommand implements CommandExecutor {
     }
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        sender.sendMessage(color("&bThere are a total of &f["+ (long) Bukkit.getServer().getOnlinePlayers().size() +"/"+Bukkit.getServer().getMaxPlayers()+"] &bplayers online&3."));
+        sender.sendMessage(color("&b共有 &f["+ (long) Bukkit.getServer().getOnlinePlayers().size() +"/"+Bukkit.getServer().getMaxPlayers()+"] &b位玩家在线&3."));
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()){
             String playerName = onlinePlayer.getName();
             if (GeyserExtras.bedrockAPI.isBedrockPlayer(onlinePlayer.getUniqueId())){
                 BedrockPlayer bedrockPlayer = GeyserExtras.bplayers.get(onlinePlayer.getUniqueId());
-                sender.sendMessage(color("&3"+playerName+" &8- &eBedrock &7&o["+bedrockPlayer.device.displayName+"]"));
+                sender.sendMessage(color("&3"+playerName+" &8- &e基岩版 &7&o["+bedrockPlayer.device.displayName+"]"));
             }
             else {
-                sender.sendMessage(color("&3"+playerName+" &8- &eJava"));
+                sender.sendMessage(color("&3"+playerName+" &8- &eJava版"));
             }
         }
 
