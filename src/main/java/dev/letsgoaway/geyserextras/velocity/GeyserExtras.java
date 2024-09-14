@@ -18,14 +18,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 @Plugin(id = "geyserextras", name = "GeyserExtras", version = PluginVersion.GE_VERSION,
-        description = "A plugin which attempts to unify features for Bedrock Edition players on Java Edition Servers with GeyserMC.", authors = {"LetsGoAway"})
+        description = "一个尝试在Java版服务器上为基岩版玩家统一功能的插件，基于GeyserMC。", authors = {"LetsGoAway"})
 public class GeyserExtras {
     public static ProxyServer server = null;
     @Inject
     public static Logger logger;
 
     public static InitializeLogger initLog;
-
 
     private GeyserEventForwarder forwarder;
 
@@ -44,12 +43,12 @@ public class GeyserExtras {
         initLog = new InitializeLogger((s) -> logger.warn(s), (s) -> logger.info(s));
         initLog.start();
         PluginVersion.checkForUpdatesAndPrintToLog((s) -> logger.warn(s));
-        initLog.logTask("Registering channels...", () -> {
+        initLog.logTask("正在注册频道...", () -> {
             server.getChannelRegistrar().register(emoteChannel);
             server.getChannelRegistrar().register(fogChannel);
-        }, "Channels registered!");
+        }, "频道注册完成！");
         this.forwarder = new GeyserEventForwarder();
-        initLog.warn("Make sure that 'proxy-mode: true' on your backend servers GeyserExtras config!");
+        initLog.warn("请确保后端服务器的GeyserExtras配置中包含'proxy-mode: true'！");
         initLog.end();
     }
 
