@@ -21,14 +21,14 @@ public class EmoteUtils {
 
     public static String getEmoteName(String uuid) {
         if (uuid.isEmpty() || uuid.isBlank()) {
-            return "Not Set";
+            return "未配置";
         }
         for (Emote emote : emotes) {
             if (emote.uuid.equals(uuid)) {
                 return emote.name;
             }
         }
-        return "Unknown (" + uuid + ")";
+        return "未知 (" + uuid + ")";
     }
 
     private static Random emoteChatRandom = new Random();

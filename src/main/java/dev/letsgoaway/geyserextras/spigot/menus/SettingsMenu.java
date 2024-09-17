@@ -10,7 +10,7 @@ public class SettingsMenu extends BedrockForm {
     SettingsMenu(BedrockPlayer bplayer) {
         super("个性设置");
         if (Config.customCoolDownEnabled) {
-            add(new Dropdown("攻击指示器", BedrockPlayer.cooldownTypes, bplayer.cooldownType,
+            add(new Dropdown("攻击指示器(准心，快捷栏上方，无)", BedrockPlayer.cooldownTypes, bplayer.cooldownType,
                     bplayer::setCooldownType)
             );
         }

@@ -1,82 +1,80 @@
-# GeyserExtras
-# If Geyser-Spigot is detected, all required config changes will be automatically applied.
-# For more details, go to https://github.com/GeyserExtras/GeyserExtras/wiki
+# GeyserExtras插件配置
+# 如果检测到Geyser-Spigot，将自动应用所有必要的配置更改。
+# 更多详情，请访问 https://github.com/GeyserExtras/GeyserExtras/wiki
 
-# Enable the Java Edition styled cooldown.
-# Requires show-cooldown: "false" in Geyser's config.
+# 启用Java版样式的冷却时间。
+# 需要在Geyser的配置中设置show-cooldown: "false"。
 enable-custom-cooldown: true
 
-# Enable the Java Edition combat sounds.
+# 启用Java版战斗音效。
 enable-java-combat-sounds: true
 
-# Forces block placements to not be hold-bridgable/scaffold-bridgeable.
-# Requires disable-bedrock-scaffolding: true in Geyser's config for forward block placements.
+# 强制方块放置不能被架桥或支撑桥。
+# 需要在Geyser的配置中设置disable-bedrock-scaffolding: true以向前方块放置。
 enable-java-only-block-placement: false
 
-# Updates the block at the player's line of sight every tick to remove ghost blocks.
+# 每个刻更新玩家视线中的方块以移除幽灵方块。
 enable-block-ghosting-fix: false
 
-# When the server closes or Geyser reloads, should GeyserExtras reconnect to the server using the below address.
+# 当服务器关闭或Geyser重新加载时，是否应使用下面的地址重新连接到服务器。
 auto-reconnect: true
 
-# This is the ip and port players connect to via any port forwarding system NOT YOUR LOCAL IP. You
-# should set this to the ip and port you give to your players.
+# 这是通过任何端口转发系统玩家连接的IP和端口，并非您的本地IP。
+# 您应该将其设置为您给玩家的IP和端口。
 external-address: "mc.exampleaddress.net"
 external-port: 19132
 
-# The actions that will show up in the Quick-Menu. Quick-Menu requires the plugin version of Geyser.
-# Actions are formatted as shown below,
+# 快速菜单中显示的操作。快速菜单需要Geyser的插件版本。
+# 操作格式如下所示，
 # "{title} >> {command}"
-# Commands are executed as the player.
-# Available placeholders are:
+# 命令将以玩家身份执行。
+# 可用的占位符包括：
 
-# %player_name% - The name that is the Java Username of the player. For example: .Geyser_Extras
-# If the player is linked the linked Java account's name is used.
+# %player_name% - 玩家的Java用户名。例如：.Geyser_Extras
+# 如果玩家已关联，则使用关联的Java帐户名称。
 
-# %xbox_username% - The username that the Bedrock player has. For example: Geyser Extras
+# %xbox_username% - Bedrock玩家的用户名。例如：Geyser Extras
 
-# %player_device% - The device the player is using currently.
-# Possible values: Android | iOS | Amazon | Windows Phone | Gear VR | Hololens | Windows | macOS | Apple TV | PlayStation | Switch | Xbox | Dedicated | Unknown
+# %player_device% - 玩家当前使用的设备。
+# 可能的值：Android | iOS | Amazon | Windows Phone | Gear VR | Hololens | Windows | macOS | Apple TV | PlayStation | Switch | Xbox | Dedicated | Unknown
 
-# %player_platform% - The platform the player is using currently.
-# Possible values: Console | Mobile | PC | VR | Unknown
+# %player_platform% - 玩家当前使用的平台。
+# 可能的值：Console | Mobile | PC | VR | Unknown
 
-# %player_inputtype% - The input type the player is using.
-# Possible values: Keyboard | Touch | Controller | VR | Unknown
+# %player_inputtype% - 玩家当前使用的输入类型。
+# 可能的值：Keyboard | Touch | Controller | VR | Unknown
 
-# %player_uiprofile% - The UI Profile the player is using.
-# Possible values: Classic | Pocket
+# %player_uiprofile% - 玩家当前使用的UI配置文件。
+# 可能的值：Classic | Pocket
 quick-menu-actions:
-  - "Swap Items with Off-hand >> /geyser offhand"
-  - "Toggle Tooltips >> /geyser tooltips"
-  - "Open GeyserExtras Menu >> /ge"
-  - "Open Advancements >> /geyser advancements"
-  - "Open Statistics >> /geyser statistics"
-  - "Player List >> /playerlist"
-  - "Platform List >> /platformlist"
+  - "交换物品与副手物品 >> /geyser offhand"
+  - "切换工具提示 >> /geyser tooltips"
+  - "打开GeyserExtras菜单 >> /ge"
+  - "打开进度 >> /geyser advancements"
+  - "打开统计信息 >> /geyser statistics"
+  - "玩家列表 >> /playerlist"
+  - "平台列表 >> /platformlist"
 
-# Enables the Knockback Attack Sprint fix.
-# In java, when you execute a Knockback attack, the Player stops sprinting for one tick.
-# The workaround for Bedrock tricks the client into having no hunger for a tick, however
-# this temporarily makes the hunger bar look empty.
+# 启用击退攻击冲刺修复。
+# 在Java版中，当执行击退攻击时，玩家会停止冲刺一格。
+# 对于Bedrock版的解决方案会欺骗客户端在一格内没有饥饿感，但这会使饥饿条暂时看起来为空。
 enable-knockback-attack-sprint-fix: true
 
-# Enables downloading of Bedrock Player skins.
-#  Please note that this is only the skin that Floodgate converts for Java Players meaning
-#  that some marketplace skins like 128x128 skins, character creator skins or even some classic skins with weird geometry may not look 100% identical.
+# 启用下载Bedrock玩家皮肤。
+# 请注意，这只是Floodgate为Java玩家转换的皮肤，这意味着一些市场皮肤如128x128皮肤、角色创建皮肤或某些经典皮肤可能不会完全相同。
 enable-skin-saving: false
 
-# Sets the default emote chat option for Java Players.
-# The GeyserExtras plugin forwards emote chat from Bedrock Edition to Java Players.
-# Java Players can still choose if they want to see emote chat by doing /emotechat
+# 设置Java玩家默认的表情聊天选项。
+# GeyserExtras插件将Bedrock版的表情聊天转发给Java玩家。
+# Java玩家仍可以选择是否查看表情聊天，方法是执行/emotechat。
 mute-emote-chat: false
 
-# Whether to disable the Paper Doll or not.
-# The Paper Doll is the small player graphic in the top left of bedrock players screens
-# This can give players a competitve advantage over java in some cases, for example,
-# you can see what armor you have on without pressing the inventory key
-# you can see what armor has broken during combat
+# 是否禁用纸娃娃功能。
+# 纸娃娃是Bedrock玩家屏幕左上角的小玩家图形。
+# 在某些情况下，这可能会给玩家带来相对于Java的竞争优势，例如，
+# 不按库存键就可以看到穿着的护甲
+# 在战斗中可以看到护甲何时损坏
 disable-paper-doll: false
 
-# Only enable if you are using GeyserExtras on a proxy.
+# 仅在使用代理上的GeyserExtras时启用。
 proxy-mode: false

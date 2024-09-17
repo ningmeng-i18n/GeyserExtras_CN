@@ -1,25 +1,25 @@
-name: GeyserExtras
-version: '1.21.0-v1.1.4'
+name: GeyserExtras_CN
+version: '1.21.0-v1.1.4(cn1.0.2)'
 author: "LetsGoAway"
 main: dev.letsgoaway.geyserextras.spigot.GeyserExtras
 api-version: '1.21'
 softdepend: [floodgate, Geyser-Spigot]
 commands:
   geyserextras:
-    description: Open the GeyserExtras menu.
+    description: 打开GeyserExtras菜单。
     usage: /<command>
     permission: geyserextras.menu
     aliases:
       - ge
   platformlist:
-    description: Shows a player list including everyone's platforms.
+    description: 显示包含所有玩家平台的列表。
     usage: /<command>
     permission: geyserextras.platformlist
     aliases:
       - pl
       - platforms
   playerlist:
-    description: Shows the Java Tab Player List menu for Bedrock Edition Players.
+    description: 显示Bedrock版玩家的Java版Tab玩家列表菜单。
     usage: /<command>
     permission: geyserextras.playerlist
     aliases:
@@ -29,7 +29,7 @@ commands:
       - tab
       - tablist
   emotechat:
-    description: Toggles Bedrock Player emote chat for Java Players.
+    description: 切换Java玩家对Bedrock玩家的表情聊天。
     usage: /<command>
     permission: geyserextras.emotechat
     aliases:
@@ -37,13 +37,13 @@ commands:
 permissions:
   geyserextras.menu:
     default: true
-    description: Allow players to execute the /geyserextras command
+    description: 允许玩家执行/geyserextras命令
   geyserextras.platformlist:
     default: true
-    description: Allow players to execute the /platformlist command
+    description: 允许玩家执行/platformlist命令
   geyserextras.playerlist:
     default: true
-    description: Allow players to execute the /playerlist command
+    description: 允许玩家执行/playerlist命令
   geyserextras.emotechat:
     default: true
-    description: Allow players to execute the /emotechat command
+    description: 允许玩家执行/emotechat命令

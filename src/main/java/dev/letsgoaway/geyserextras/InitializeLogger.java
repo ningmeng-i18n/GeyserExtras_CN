@@ -22,12 +22,13 @@ public class InitializeLogger {
         info("版本: " + PluginVersion.GE_VERSION);
         info("服务器类型: " + ServerType.get());
         info("汉化自@梦泽 @柠枺 感谢您的支持！");
+        info("柠梦汉化组https://github.com/ningmeng-i18n");
     }
 
     public void end() {
         DecimalFormat r3 = new DecimalFormat("0.000");
         Instant finish = Instant.now();
-        info("Done! (" + r3.format(Duration.between(start, finish).toMillis() / 1000.0d) + "s)");
+        info("加载成功，感谢使用! (" + r3.format(Duration.between(start, finish).toMillis() / 1000.0d) + "s)");
         info("----------------------------------------");
     }
 
