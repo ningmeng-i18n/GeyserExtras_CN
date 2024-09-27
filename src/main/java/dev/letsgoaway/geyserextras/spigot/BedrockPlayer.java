@@ -45,8 +45,8 @@ public class BedrockPlayer {
     private boolean dontUnblockNextLeftClickAir = false;
 
     public float coolDownThresHold = 0.0f;
-    public String cooldownType = "准心";
-    public static List<String> cooldownTypes = Arrays.asList("准心", "快捷栏", "None");
+    public String cooldownType = "Crosshair";
+    public static List<String> cooldownTypes = Arrays.asList("Crosshair", "Hotbar", "None");
     public boolean enableSneakDropOffhand = false;
     public boolean spaceHotbar = false;
     public int lastCooldown = 0;
@@ -569,7 +569,7 @@ public class BedrockPlayer {
 
     public void setWaiting(int waitingEmoteID) {
         int emoteNumber = waitingEmoteID + 1;
-        player.sendMessage("播放表情 #" + emoteNumber + " (" + emoteWheelUnicodes.get(waitingEmoteID) + ").");
+        player.sendMessage("请播放 #" + emoteNumber + " (" + emoteWheelUnicodes.get(waitingEmoteID) + ")表情以绑定.");
         this.waitingEmoteID = waitingEmoteID;
         waitingForEmote = true;
     }
