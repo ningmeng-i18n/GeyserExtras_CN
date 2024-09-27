@@ -569,7 +569,7 @@ public class BedrockPlayer {
 
     public void setWaiting(int waitingEmoteID) {
         int emoteNumber = waitingEmoteID + 1;
-        player.sendMessage("Please play the emote for Emote #" + emoteNumber + " (" + emoteWheelUnicodes.get(waitingEmoteID) + ").");
+        player.sendMessage("请播放 #" + emoteNumber + " (" + emoteWheelUnicodes.get(waitingEmoteID) + ")表情以绑定.");
         this.waitingEmoteID = waitingEmoteID;
         waitingForEmote = true;
     }
